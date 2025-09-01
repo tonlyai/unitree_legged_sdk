@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8.3)
 project(unitree_legged_sdk)
 
+# 添加这行来禁用 PIE
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -no-pie")
 # check arch and os
 message("-- CMAKE_SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR}")
 if("${CMAKE_SYSTEM_PROCESSOR}" MATCHES "x86_64.*")
